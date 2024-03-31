@@ -16,6 +16,15 @@ List* insert (List *l, int elem) {
 /* */
 List* insert_back (List *l, int elem) {
   /* Terminar! */	
+  List* t, *p = NULL;
+  List* node = (List *) malloc(sizeof(List));
+  node->data = elem;
+  for(t = l; t != NULL; t = t->next){p = t;}
+  if(p == NULL){return node;}
+  p->next = node;
+  node->next = t;
+  return l;
+
 }
 
 /* */

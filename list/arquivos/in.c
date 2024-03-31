@@ -3,6 +3,11 @@
 /* */
 int in (List *l, int k) {
   /*Terminar!*/	
+  List* t;
+  for(t = l; t != NULL; t = t->next){
+    if(k == t->data){return TRUE;}
+  }
+  return FALSE;
 }
 
 /* */
