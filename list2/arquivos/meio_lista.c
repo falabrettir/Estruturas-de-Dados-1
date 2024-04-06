@@ -2,6 +2,15 @@
 
 int meio (List *l) {
   /*Terminar*/	
+  List* t = l->next; 
+  List* s = l;
+  int i = 1;
+  while(t!= NULL){
+    t = t -> next;
+    i++;
+    if(i%2 == 0){s = s -> next;}
+  }
+  return s->data;
 }
 
 int main () {

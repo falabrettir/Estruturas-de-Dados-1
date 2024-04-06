@@ -1,29 +1,46 @@
 #include "stack.h"
 
 Stack* create () {
-  /*Terminar*/
+  return NULL;
 }
 
 void destroy (Stack *s) {
-  /*Terminar*/
+  Stack* t;
+  t = s;
+  while(t != NULL){s = t; t = t->next; free(s);}
 }
 
 Stack* push (Stack *s, int elem) {
-  /*Terminar*/
+  Stack* node = (Stack*) malloc(sizeof(Stack));
+  node->data = elem;
+  node->next = s;
+  return node;
 }
 
 Stack* pop (Stack *s) {
-  /*Terminar*/
+  if(empty(s)){printf("Stack Underflow!"); exit(1);}
+  else{
+    Stack* t;
+    t = s->next;
+    free(s);
+    s = t;
+  }
 }
 
 int get_peek (Stack *s) {
-  /*Terminar*/
+  if(empty(s)){printf("Stack Underflow!"); exit(1);}
+  else{
+    return s->data;
+  }
 }
 
 int empty (Stack *s) {
-  /*Terminar*/
+  return(s == NULL);
 }
 
 void print (Stack *s) {
-  /*Terminar*/
+  Stack* t;
+  printf("Peek: ");
+  for(t = s; t != NULL; t = t->next){printf("%d ", t->data);}
+  printf("Bottom");
 }
