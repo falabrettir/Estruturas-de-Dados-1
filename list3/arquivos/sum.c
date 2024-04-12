@@ -2,7 +2,9 @@
 
 /* */
 int sum (List *l) {
-  /*Terminar.*/	
+  if(l->next != NULL){
+    return 0 + sum(l->next);
+  }
 }
 
 /* */

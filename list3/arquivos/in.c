@@ -3,7 +3,12 @@
 
 /* */
 int in (List *l, int k) {
-  /*Terminar.*/	
+  if(l == NULL){
+    return FALSE;
+  }else{
+    if(l->data == k){return TRUE;}
+    else{in(l->next, k);}
+  }
 }
 
 /* */
@@ -19,5 +24,6 @@ int main () {
   printf("In = %d\n", in(l,3));
   printf("In = %d\n", in(l,6));
   destroy (l);
+  //print(l);
   return 0;
 }
