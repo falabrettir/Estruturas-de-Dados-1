@@ -28,6 +28,12 @@ void print (List* l) {
 
 /* */
 void destroy (List *l) {
-  /*Terminar*/	
+  if(l == NULL){}
+  else{
+    if(l->next != NULL){destroy(l->next);}
+    if(l->next == NULL){
+      free(l);
+    }
+  }
 }
 

@@ -1,8 +1,19 @@
 #include "list.h"
 
-/* */
+
 List* merge (List *A, List *B) {
-  /*Terminar.*/	
+  List* C;
+  if(A == NULL){
+    C = B;
+    return C;
+  }
+  if(B == NULL){
+    C = A;
+    return C;
+  }
+  if(A->data <= B->data){C = A; C->next = merge(A->next, B);}
+  else{C = B; C->next = merge(A, B->next);}
+  return C;
 }
 
 /* */

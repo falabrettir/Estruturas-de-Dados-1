@@ -3,7 +3,13 @@
 
 /* */
 int position (List *l, int k) {
-  /*Terminar*/
+  if(l != NULL){
+    if(l->data == k){return 0;}
+    else{
+      int retorno = position(l->next, k);
+      if(retorno != -1){return retorno + 1;}
+    }
+  }return -1;
 }
 
 /* */
@@ -20,7 +26,7 @@ int main () {
   print (l);
   printf("\n");
   printf("Position of %d = %d\n", 9, position(l, 9));
-  printf("Position of %d = %d\n", 10, position(l, 10));
+  printf("Position of %d = %d\n", 5, position(l, 5));
   destroy (l);
   return 0;
 }

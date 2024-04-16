@@ -2,7 +2,11 @@
 
 /* */
 int size (List *l) {
-  /*Terminar*/	
+  if(l == NULL){
+    return 0;
+  }else{
+    return 1 + size(l->next);
+  }	
 }
 
 /* */

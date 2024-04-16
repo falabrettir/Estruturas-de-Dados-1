@@ -79,6 +79,7 @@ int solve (int sudoku[][9], int n) {
     for (c = 0; c < n; c++) {
       if (sudoku[r][c] == 0) {
 	/*Terminar*/      
+	
       }	      
     }	    
   }  
