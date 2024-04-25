@@ -5,7 +5,7 @@ List* merge (List *A, List *B){
   List* p = NULL, *t;
   while((A != NULL) && (B != NULL)){
     if(p == NULL){
-      if(A-> data <= B->data){p = A; t = p; A = A->next;}
+      if(A-> data <= B ->data){p = A; t = p; A = A->next;}
       else{p = B; t = p; B = B->next;}
     }
     else{

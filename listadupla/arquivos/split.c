@@ -2,6 +2,11 @@
 
 List* split (List *l, List *x, List *y) {
   /*Terminar!*/	
+  x->prev->next = y->next;
+  y->next->prev = x->prev;
+  x->prev = NULL;
+  y->next = NULL;
+  return x;
 }
 
 int main () {

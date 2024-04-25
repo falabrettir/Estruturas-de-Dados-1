@@ -18,7 +18,17 @@ List* insert_front (List *l, int elem) {
 
 /**/
 List* insert_back (List *l, int elem) {
-  /*Terminar*/	
+  /*Terminar*/
+
+  List* t = l;
+  List* node = (List*)malloc(sizeof(List));
+  node->next = NULL;
+  node->data = elem;
+  if(l == NULL){return node;}
+  while(t->next != NULL){t = t -> next;}
+  node->prev = t;
+  t->next = node;
+  return l; 
 }
 
 /**/
